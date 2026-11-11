@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZ Social — Connect with people</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">AZ</span><span>AZ Social</span></a>
+    <div class="top-actions">
+      <span id="user-label" class="muted">Not signed in</span>
+      <button id="logout-btn" class="btn btn-light hidden">Log out</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <section id="auth-panel" class="auth-card">
+      <div class="auth-intro">
+        <span class="brand-mark large">AZ</span>
+        <h1>Connect with your world.</h1>
+        <p>Create an account or sign in to share updates with your community.</p>
+      </div>
+      <div class="auth-form">
+        <div class="tabs">
+          <button id="login-tab" class="tab active" type="button">Log in</button>
+          <button id="signup-tab" class="tab" type="button">Create account</button>
+        </div>
+        <form id="auth-form">
+          <label id="name-wrap" class="hidden">Your name
+            <input id="name" type="text" placeholder="e.g. Aziz Ali" autocomplete="name">
+          </label>
+          <label>Email address
+            <input id="email" type="email" placeholder="you@example.com" required autocomplete="email">
+          </label>
+          <label>Password
+            <input id="password" type="password" placeholder="At least 6 characters" minlength="6" required autocomplete="current-password">
+          </label>
+          <button id="auth-submit" class="btn btn-primary full" type="submit">Log in</button>
+          <p id="auth-message" class="message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="app-panel" class="app-layout hidden">
+      <aside class="sidebar">
+        <div class="profile-mini">
+          <div id="avatar-letter" class="avatar">A</div>
+          <div><strong id="sidebar-name">Your profile</strong><small id="sidebar-email">Your email</small></div>
+        </div>
+        <div class="side-note"><strong>Welcome to AZ Social</strong><p>Share something useful, positive or interesting with your community.</p></div>
+        <p class="sidebar-foot">AZ Social · Learning project</p>
+      </aside>
+
+      <section class="feed-column">
+        <div class="welcome-row">
+          <div><h1>News Feed</h1><p class="muted">See what your community is sharing.</p></div>
+          <span class="online-dot">Live feed</span>
+        </div>
+
+        <form id="post-form" class="composer card">
+          <div class="composer-head">
+            <div id="composer-avatar" class="avatar">A</div>
+            <textarea id="post-text" maxlength="2000" placeholder="What's on your mind?" rows="3"></textarea>
+          </div>
+          <div class="composer-bottom">
+            <label class="file-label">＋ Add photo
+              <input id="post-image" type="file" accept="image/*">
+            </label>
+            <span id="file-name" class="muted small">No image selected</span>
+            <button id="post-submit" class="btn btn-primary" type="submit">Publish post</button>
+          </div>
+          <p id="post-message" class="message" aria-live="polite"></p>
+        </form>
+
+        <div id="feed" class="feed" aria-live="polite">
+          <div class="empty-state">Your feed will appear here after you sign in.</div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>AZ Social · Built with HTML, CSS, JavaScript & Firebase</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
